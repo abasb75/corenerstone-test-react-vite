@@ -5,7 +5,7 @@ import { RenderingEngine, getRenderingEngine } from "@cornerstonejs/core";
 import * as cornerstone from "@cornerstonejs/core";
 import { IStackViewport } from "@cornerstonejs/core/types";
 
-const imageIds = 'dicomweb:/cornerstone-test-react-vite/1.dcm';
+const imageIds = 'dicomweb:/corenerstone-test-react-vite/1.dcm';
 
 function App() {
 

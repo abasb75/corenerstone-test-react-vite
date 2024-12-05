@@ -6,7 +6,7 @@ import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base:'/cornerstone-test-react-vite',
+  base:'/corenerstone-test-react-vite',
   plugins: [react(),viteCommonjs()],
   resolve: {
     alias: {
