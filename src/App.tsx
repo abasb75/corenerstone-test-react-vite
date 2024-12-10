@@ -4,8 +4,10 @@ import initCornerstone from "./initCornerstone";
 import { RenderingEngine, getRenderingEngine } from "@cornerstonejs/core";
 import * as cornerstone from "@cornerstonejs/core";
 import { IStackViewport } from "@cornerstonejs/core/types";
+import { Enums, ToolGroupManager, WindowLevelTool } from "@cornerstonejs/tools";
+import IToolGroup from "@cornerstonejs/tools/types/IToolGroup";
 
-const imageIds = 'dicomweb:/corenerstone-test-react-vite/1.dcm';
+const imageIds = 'dicomweb:/corenerstone-test-react-vite/3.dcm';
 
 function App() {
 
@@ -45,8 +47,16 @@ function App() {
     viewport.setStack([imageId],0);
     viewport.render();
 
-    setIsLoading(false)
+    setIsLoading(false);
 
+    const toolGroup = ToolGroupManager.createToolGroup("to")  as IToolGroup;
+    toolGroup.addTool(WindowLevelTool.toolName);
+        
+    toolGroup.setToolActive(WindowLevelTool.toolName,{
+      bindings: [{ mouseButton: Enums.MouseBindings.Primary }],
+    });
+
+    toolGroup.addViewport(viewportId,renderingEngineId);
 
 }
 
